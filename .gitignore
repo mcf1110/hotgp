@@ -1,0 +1,15 @@
+.stack-work/
+.vscode/
+*~
+datasets/*.csv
+datasets/*.json
+output/*.csv
+output/*.json
+*.checkpoint
+logs
+*.json
+*.sh
+*.py
+
+output-bkp
+checkpoint-bkp

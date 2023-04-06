@@ -1,0 +1,194 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           hotgp
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/mcf1110/hotgp#readme>
+homepage:       https://github.com/mcf1110/hotgp#readme
+bug-reports:    https://github.com/mcf1110/hotgp/issues
+author:         Matheus Fernandes
+maintainer:     example@example.com
+copyright:      2023 Matheus Fernandes
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/mcf1110/hotgp
+
+library
+  exposed-modules:
+      Benchmark
+      Benchmark.BenchmarkToConfig
+      Benchmark.Core
+      Benchmark.Dataset
+      Benchmark.Download
+      Benchmark.Helpers
+      Benchmark.Log
+      Benchmark.Metrics
+      Benchmark.Parse
+      Benchmark.Problems
+      Benchmark.Problems.CollatzNumbers
+      Benchmark.Problems.CompareStringLengths
+      Benchmark.Problems.CountOdds
+      Benchmark.Problems.Digits
+      Benchmark.Problems.DoubleLetters
+      Benchmark.Problems.EvenSquares
+      Benchmark.Problems.ForLoopIndex
+      Benchmark.Problems.Grade
+      Benchmark.Problems.LastIndexOfZero
+      Benchmark.Problems.Median
+      Benchmark.Problems.MirrorImage
+      Benchmark.Problems.NegativeToZero
+      Benchmark.Problems.NumberIO
+      Benchmark.Problems.ReplaceSpaceWithNewline
+      Benchmark.Problems.ReplaceSpaceWithNewlineFst
+      Benchmark.Problems.ReplaceSpaceWithNewlineSnd
+      Benchmark.Problems.Smallest
+      Benchmark.Problems.SmallOrLarge
+      Benchmark.Problems.StringDifferences
+      Benchmark.Problems.StringLengthsBackwards
+      Benchmark.Problems.SumOfSquares
+      Benchmark.Problems.Syllables
+      Benchmark.Problems.VectorAverage
+      Benchmark.Problems.VectorsSummed
+      Benchmark.Problems.WallisPi
+      Benchmark.Run
+      Benchmark.RunSearch
+      Evolution
+      Evolution.Checkpoint
+      Evolution.Config
+      Evolution.Core
+      Evolution.Crossover
+      Evolution.Fitness
+      Evolution.Generate
+      Evolution.Helpers
+      Evolution.Individual
+      Evolution.Mutation
+      Evolution.Pretty
+      Evolution.Run
+      Evolution.SamplerTable
+      Grammar
+      Grammar.Core
+      Grammar.Eval
+      Grammar.Helpers
+      Grammar.Pretty
+      Grammar.Simplify
+      Grammar.Types
+      Pretty
+      Prune
+  other-modules:
+      Paths_hotgp
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , flat
+    , mtl
+    , process
+    , random
+    , scientific
+    , semialign
+    , sorted-list
+    , split
+    , splitmix
+    , text
+    , these
+    , time
+    , unordered-containers
+    , vector
+  default-language: Haskell2010
+
+executable hotgp-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_hotgp
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall -O2
+  build-depends:
+      aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , flat
+    , hotgp
+    , mtl
+    , process
+    , random
+    , scientific
+    , semialign
+    , sorted-list
+    , split
+    , splitmix
+    , text
+    , these
+    , time
+    , unordered-containers
+    , vector
+  default-language: Haskell2010
+
+test-suite hotgp-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      BenchmarkSpec
+      EvolutionSpec
+      EvolutionSpec.AtPointSpec
+      EvolutionSpec.CrossoverSpec
+      EvolutionSpec.GenerateSpec
+      EvolutionSpec.Helpers
+      EvolutionSpec.MutationSpec
+      GrammarSimplifySpec
+      GrammarSpec
+      GrammarTypesSpec
+      Helpers
+      MaxTreeDepthSpec
+      MeasureSpec
+      PrettyTreeSpec
+      ProblemTrees
+      Paths_hotgp
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , aeson
+    , array
+    , base >=4.7 && <5
+    , bytestring
+    , containers
+    , directory
+    , flat
+    , hotgp
+    , mtl
+    , process
+    , random
+    , scientific
+    , semialign
+    , sorted-list
+    , split
+    , splitmix
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck
+    , text
+    , these
+    , time
+    , unordered-containers
+    , vector
+  default-language: Haskell2010

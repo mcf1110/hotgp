@@ -1,0 +1,75 @@
+name: hotgp
+version: 0.1.0.0
+github: "mcf1110/hotgp"
+license: BSD3
+author: "Matheus Fernandes"
+maintainer: "mcf1110"
+copyright: "2023 Matheus Fernandes"
+
+extra-source-files:
+    - README.md
+    - ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description: Please see the README on GitHub at <https://github.com/mcf1110/hotgp#readme>
+
+dependencies:
+    - base >= 4.7 && < 5
+    - aeson
+    - array
+    - aeson
+    - bytestring
+    - containers
+    - directory
+    - mtl
+    - process
+    - random
+    - scientific
+    - semialign
+    - sorted-list
+    - split
+    - splitmix
+    - text
+    - these
+    - text
+    - time
+    - vector
+    - flat
+    - unordered-containers
+
+library:
+    source-dirs: src
+
+executables:
+    hotgp-exe:
+        main: Main.hs
+        source-dirs: app
+        ghc-options:
+            - -threaded
+            - -rtsopts
+            - -with-rtsopts=-N
+            - -Wall
+            - -O2
+        dependencies:
+            - hotgp
+
+tests:
+    hotgp-test:
+        main: Spec.hs
+        source-dirs: test
+        ghc-options:
+            - -threaded
+            - -rtsopts
+            - -with-rtsopts=-N
+        dependencies:
+            - hotgp
+            - tasty
+            - tasty-hunit
+            - tasty-quickcheck
+            - QuickCheck

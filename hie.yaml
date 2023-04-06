@@ -1,0 +1,10 @@
+cradle:
+    stack:
+        - path: "./src"
+          component: "hotgp:lib"
+
+        - path: "./app/Main.hs"
+          component: "hotgp:exe:hotgp-exe"
+
+        - path: "./test"
+          component: "hotgp:test:hotgp-test"
